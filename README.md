@@ -5,7 +5,7 @@ Home: http://www.gnu.org/software/texinfo/
 
 Package license: GPL-2.0+ and GPL-3.0+
 
-Feedstock license: BSD
+Feedstock license: BSD 3-Clause
 
 Summary: The GNU Documentation System
 
@@ -69,6 +69,7 @@ Terminology
 
 Current build status
 ====================
+
 Linux: [![Circle CI](https://circleci.com/gh/conda-forge/texinfo-feedstock.svg?style=svg)](https://circleci.com/gh/conda-forge/texinfo-feedstock)
 OSX: [![TravisCI](https://travis-ci.org/conda-forge/texinfo-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/texinfo-feedstock) 
 Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/texinfo-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/texinfo-feedstock/branch/master)
