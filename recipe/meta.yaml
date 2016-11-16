@@ -22,8 +22,9 @@ requirements:
 test:
   commands:
     - makeinfo -h
-    #- conda inspect linkages -p $PREFIX texinfo  # [not win]
-    #- conda inspect objects -p $PREFIX texinfo  # [osx]
+    - conda inspect linkages -p $PREFIX texinfo  # [not win]
+    - conda inspect objects -p $PREFIX texinfo  # [osx]
+    - conda inspect prefix-lengths /feedstock_root/build_artefacts/linux-64/*.tar.bz2  # [linux]
 
 about:
   home: http://www.gnu.org/software/texinfo/

@@ -33,6 +33,8 @@ install:
       conda config --set show_channel_urls true
       conda install --yes --quiet conda-forge-build-setup
       source run_conda_forge_build_setup
+      # Test conda-build 2.
+      conda install conda-build=2 --yes
 
 script:
   - conda build ./recipe
