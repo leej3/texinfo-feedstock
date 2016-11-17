@@ -41,6 +41,9 @@ conda clean --lock
 conda install --yes --quiet conda-forge-build-setup
 source run_conda_forge_build_setup
 
+# Test conda-build 2.
+conda install conda-build=2 --yes
+
 # Embarking on 1 case(s).
     set -x
     export CONDA_PERL=5.20.3.1
