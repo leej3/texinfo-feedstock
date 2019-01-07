@@ -5,7 +5,6 @@ package:
   version: {{ version }}
 
 source:
-  fn: texinfo-{{ version }}.tar.gz
   url: http://ftp.gnu.org/gnu/texinfo/texinfo-{{ version }}.tar.gz
   sha256: d34272e4042c46186ddcd66bd5d980c0ca14ff734444686ccf8131f6ec8b1427
 
@@ -16,7 +15,16 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    # Is this a host or build dep????
+    - autoconf
+    - automake
+    - libtool
+    - help2man
+    - gettext
+    - gawk
+    - make
+  host:
+    - ncurses
+    - libiconv  # [osx]
     - perl
   run:
     - perl
@@ -24,13 +32,11 @@ requirements:
 test:
   commands:
     - makeinfo -h
-    #- conda inspect linkages -p $PREFIX texinfo  # [not win]
-    #- conda inspect objects -p $PREFIX texinfo  # [osx]
 
 about:
   home: http://www.gnu.org/software/texinfo/
   license: GPL-2.0 and GPL-3.0
-  summary: 'The GNU Documentation System.'
+  summary: 'The GNU Documentation System'
 
 extra:
   recipe-maintainers:
