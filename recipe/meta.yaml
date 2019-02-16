@@ -1,4 +1,4 @@
-{% set version = "6.5" %}
+{% set version = "6.6" %}
 
 package:
   name: texinfo
@@ -6,10 +6,10 @@ package:
 
 source:
   url: http://ftp.gnu.org/gnu/texinfo/texinfo-{{ version }}.tar.gz
-  sha256: d34272e4042c46186ddcd66bd5d980c0ca14ff734444686ccf8131f6ec8b1427
+  sha256: 900723b220baa4672c4214a873a69ecbe1cb5f14c926a1a4bbb230ac309294cb
 
 build:
-  number: 1000
+  number: 0
   skip: True  # [win]
 
 requirements:
