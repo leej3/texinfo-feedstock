@@ -9,17 +9,27 @@ source:
   sha256: a52d05076b90032cb2523673c50e53185938746482cf3ca0213e9b4b50ac2d3e
 
 build:
+{% if bootstrapping == 'yes' %}
+  # Please increment by two
+  number: 0
+  string: h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}_bootstrapping
+{% else %}
+  # Keep above the number of the _bootstrapping package
   number: 1
+{% endif %}
   skip: True  # [win]
+  script_env:
+    - BOOTSTRAPPING={{ bootstrapping }}
 
 requirements:
   build:
     - {{ compiler('c') }}
+{% if bootstrapping != 'yes' %}
     - autoconf
     - automake
     - libtool
     - help2man
-    - gettext
+    - gettext   # [not linux]
     - gawk
     - make
   host:
@@ -28,6 +38,7 @@ requirements:
     - perl
   run:
     - perl
+{% endif %}
 
 test:
   commands:
